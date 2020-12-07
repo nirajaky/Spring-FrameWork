@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--          *****************PRIMITIVE DATA TYPES***********************-->
+    <!--  this is our 1st beans -->
+    <bean class="com.nirajaky.Student" name="student1">
+        <property name="studentId" value="205" />
+        <property name="studentName" value="Sonu Kumar" />
+        <property name="studentAddress" value="Jamui" />
+    </bean>
+
+    <!--  this is our 2nd beans -->
+    <bean class="com.nirajaky.Student" name="student2">
+        <property name="studentId" value="205" />
+        <property name="studentName" value="Sonu Kumar" />
+        <property name="studentAddress" value="Bangalore" />
+    </bean>
+
+<!--    **************************COLLECTION DATA TYPES************************-->
+    <bean class="com.nirajaky.collections.Employee" name="employee1">
+        <property name="name" value="Priya Singh" />
+        <property name="phones">
+            <list>
+                <value>456885666</value>
+                <value>53535634</value>
+                <value>635653534</value>
+                <value>45635446355</value>
+                <value>645353</value>
+            </list>
+        </property>
+
+        <property name="addresses">
+            <set>
+                <value>Jamui</value>
+                <value>Jalandhar</value>
+                <value>Bangluru</value>
+                <value>London</value>
+            </set>
+        </property>
+
+        <property name="courses">
+            <map>
+                <entry key="Tech" value="Java"/>
+                <entry key="Tech" value="JavaScript"/>
+                <entry key="History" value="Mahabharat"/>
+                <entry key="Geo" value="World"/>
+            </map>
+        </property>
+    </bean>
+
+<!--    ********************REFERENCE DATA TYPE*******************-->
+    <bean class="com.nirajaky.ref.B" name="bref">
+        <property name="y" value="90"/>
+    </bean>
+
+    <bean class="com.nirajaky.ref.A" name="aref">
+        <property name="x" value="100"/>
+        <property name="b">
+            <ref bean="bref"></ref>
+        </property>
+    </bean>
+
+</beans>
