@@ -2,6 +2,7 @@ package com.nirajaky;
 
 import com.nirajaky.collections.Employee;
 import com.nirajaky.ref.A;
+import com.nirajaky.standalone.collections.Person;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -40,5 +41,12 @@ public class App
         System.out.println(aa.getB());
         System.out.println(aa.toString());
         //System.out.println( "Hello World     !" );
+
+        System.out.println("==========STANDALONE COLLECTION====================");
+        ApplicationContext context1 = new ClassPathXmlApplicationContext("standalone.xml");
+
+        Person p1 = (Person) context1.getBean("person");
+        System.out.println(p1);
+        System.out.println(p1.getFriends().getClass().getName());
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--    STANDALONE LIST-->
+    <util:list id="myfriends" list-class="java.util.ArrayList">
+        <value>Aman</value>
+        <value>Raman</value>
+        <value>Chaman</value>
+        <value>Daman</value>
+    </util:list>
+
+    <!--    ************************** STANDALONE COLLECTION DATA TYPES************************-->
+    <bean class="com.nirajaky.standalone.collections.Person" name="person">
+        <property name="friends" ref="myfriends" />
+    </bean>
+
+    <bean class="com.nirajaky.standalone.collections.Person" name="person2">
+        <property name="friends" ref="myfriends" />
+    </bean>
+
+
+
+
+</beans>
